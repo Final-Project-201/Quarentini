@@ -9,10 +9,13 @@
     4. eventually, we want to log this into memory to prevent access in the same session by refresh.
 */
 
-function ageVerification () {
-    var agePrompt = prompt("How old are you, anyway? Please, enter your age in years.");
-    if (agePrompt >= 21) alert('Great have a seat, someone will be with you shortly!');
-        else {
-            alert('Now enter your mother'/'s phone number so we let her know what naughty child she has')
-        }
-}
+// when clicking on one of the tests prompt the initial age verification prompt
+
+// function ageVerification () {
+//     var agePrompt = prompt("How old are you, anyway? Please, enter your age in years.");
+//     if (agePrompt >= 21) alert('Great have a seat, someone will be with you shortly!');
+//         else {
+//             alert('Now enter your mother\'s phone number so we let her know what naughty child she has')
+//         }
+// }
+// ageVerification ();
