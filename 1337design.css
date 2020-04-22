@@ -1,3 +1,8 @@
+
+.imgclass {
+  width: 80px;
+  height: 80px;
+
 img.beer {
     border-radius: 75px, 75px, 75px, 75px;
 }
