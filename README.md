@@ -27,3 +27,6 @@ https://docs.google.com/document/d/1bk9bSZynrR8f4bWPpUKx-vbYBZkC3Gre4krFrqMYqGQ/
 
 ![DOMtree](images/DOMTreePlanfor201Final.png)
 
+## Domain model for the questions 
+
+![wireframe2](images/wireframe5.png)
