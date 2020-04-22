@@ -11,11 +11,11 @@
 
 // when clicking on one of the tests prompt the initial age verification prompt
 
-function ageVerification () {
-    var agePrompt = prompt("How old are you, anyway? Please, enter your age in years.");
-    if (agePrompt >= 21) alert('Great have a seat, someone will be with you shortly!');
-        else {
-            alert('Now enter your mother\'s phone number so we let her know what naughty child she has')
-        }
-}
-ageVerification ();
+// function ageVerification () {
+//     var agePrompt = prompt("How old are you, anyway? Please, enter your age in years.");
+//     if (agePrompt >= 21) alert('Great have a seat, someone will be with you shortly!');
+//         else {
+//             alert('Now enter your mother\'s phone number so we let her know what naughty child she has')
+//         }
+// }
+// ageVerification ();
