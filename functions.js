@@ -28,7 +28,9 @@ function render() {
         var targetUl = document.getElementById('list');
         var newLi = document.createElement('li');
         var newImg = document.createElement('img');
-        newImg.src = selectAnswer();
+        var selectedAnswer = selectAnswer();
+        newImg.src = selectedAnswer.imgsrc;
+        newImg.id = selectedAnswer.name;
         newLi.appendChild(newImg);
         targetUl.appendChild(newLi);
         answersCounter++;
@@ -42,9 +44,8 @@ function selectQuestion() {
 }
 
 function selectAnswer() {
-    var img = answersArray[answersCounter].imgsrc;
 
-    return img;
+    return answersArray[answersCounter];
 }
 
 var pickNew = document.getElementById('list');
@@ -68,7 +69,10 @@ function newPage() {
 function clickHandler(event) {
     if (questionCounter < (questionArray.length - 1)) {
         questionCounter++;
+
         for (var i = 0; i < answersArray.length; i++) {
+            console.log('target', event.target.id);
+            console.log(' answer ', answersArray[i].name);
             if (event.target.id === answersArray[i].name) {
                 answersArray[i].voteCount++;
 
@@ -87,27 +91,27 @@ function clickHandler(event) {
 var question1 = new CreateQuestion('Question 1');
 var question2 = new CreateQuestion('Question 2');
 var question3 = new CreateQuestion('Question 3');
-var question4 = new CreateQuestion('Question 4');
-var question5 = new CreateQuestion('Question 5');
-var question6 = new CreateQuestion('Question 6');
-var question7 = new CreateQuestion('Question 7');
-var question8 = new CreateQuestion('Question 8');
-var question9 = new CreateQuestion('Question 9');
-var question10 = new CreateQuestion('Question 10');
+// var question4 = new CreateQuestion('Question 4');
+// var question5 = new CreateQuestion('Question 5');
+// var question6 = new CreateQuestion('Question 6');
+// var question7 = new CreateQuestion('Question 7');
+// var question8 = new CreateQuestion('Question 8');
+// var question9 = new CreateQuestion('Question 9');
+// var question10 = new CreateQuestion('Question 10');
 
 
 var answer1 = new CreateAnswers('images/your-moves-are-5b24a2.jpg', 'nameOne');
 var answer2 = new CreateAnswers('images/pexels-photo-1267257.jpeg', 'nameTwo');
 var answer3 = new CreateAnswers('images/your-moves-are-5b24a2.jpg', 'nameFour');
 var answer4 = new CreateAnswers('images/your-moves-are-5b24a2.jpg', 'nameThree');
-// var answer5 = new CreateAnswers('images/your-moves-are-5b24a2.jpg');
-// var answer6 = new CreateAnswers('images/your-moves-are-5b24a2.jpg');
-// var answer7 = new CreateAnswers('images/your-moves-are-5b24a2.jpg');
-// var answer8 = new CreateAnswers('images/your-moves-are-5b24a2.jpg');
-// var answer9 = new CreateAnswers('images/your-moves-are-5b24a2.jpg');
-// var answer10 = new CreateAnswers('images/your-moves-are-5b24a2.jpg');
-// var answer11 = new CreateAnswers('images/your-moves-are-5b24a2.jpg');
-// var answer12 = new CreateAnswers('images/your-moves-are-5b24a2.jpg');
+var answer5 = new CreateAnswers('images/your-moves-are-5b24a2.jpg', 'namefive');
+var answer6 = new CreateAnswers('images/your-moves-are-5b24a2.jpg', 'namesix');
+var answer7 = new CreateAnswers('images/your-moves-are-5b24a2.jpg', 'nameseven');
+var answer8 = new CreateAnswers('images/your-moves-are-5b24a2.jpg', 'nameeight');
+var answer9 = new CreateAnswers('images/your-moves-are-5b24a2.jpg', 'namenine');
+var answer10 = new CreateAnswers('images/your-moves-are-5b24a2.jpg', 'nameten');
+var answer11 = new CreateAnswers('images/your-moves-are-5b24a2.jpg', 'nameeleven');
+var answer12 = new CreateAnswers('images/your-moves-are-5b24a2.jpg', 'nanetwelve');
 // var answer13 = new CreateAnswers('images/your-moves-are-5b24a2.jpg');
 // var answer14 = new CreateAnswers('images/your-moves-are-5b24a2.jpg');
 // var answer15 = new CreateAnswers('images/your-moves-are-5b24a2.jpg');
