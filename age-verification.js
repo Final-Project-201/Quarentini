@@ -9,7 +9,7 @@
     4. eventually, we want to log this into memory to prevent access in the same session by refresh.
 */
 
-// when clicking on one of the tests prompt the initial age verification prompt
+//Initial age verification function
 
 function ageVerification () {
     var agePrompt = prompt("How old are you, anyway? Please, enter your age in years.");
@@ -19,3 +19,12 @@ function ageVerification () {
         }
 }
 ageVerification ();
+
+//Forms for each section regarding each quiz
+
+form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var ageVerification = e.prompt.alert;
+    var agePrompt = parseInt(e.prompt.alert);
+
+}
