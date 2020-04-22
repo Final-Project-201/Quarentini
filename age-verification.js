@@ -11,20 +11,25 @@
 
 //Initial age verification function
 
-function ageVerification () {
-    var agePrompt = prompt("How old are you, anyway? Please, enter your age in years.");
-    if (agePrompt >= 21) alert('Great have a seat, someone will be with you shortly!');
-        else {
-            alert('Now enter your mother\'s phone number so we let her know what naughty child she has')
+function ageVerification (event) {
+    var imgId = event.target.id
+    console.log(imgId);
+    var agePrompt = parseInt(prompt("How old are you, anyway? Please, enter your age in years."));
+    if (agePrompt >= 20) {
+        alert('Great have a seat, someone will be with you shortly!');
+        var name = prompt('Please enter your name.');
+        var email = prompt('Enter your email as well.');
+        localStorage.setItem('name', name)
+        localStorage.setItem('email', email)
+        if (imgId === 'beer') {
+            window.location.replace('beerTest.html');
+        } else {
+            window.location.replace('liquorTest.html');
         }
+    } else {
+        alert('Now enter your mother\'s phone number so we let her know what naughty child she has')
+    }
 }
-ageVerification ();
 
-//Forms for each section regarding each quiz
-
-form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    var ageVerification = e.prompt.alert;
-    var agePrompt = parseInt(e.prompt.alert);
-
-}
+var mainEl = document.getElementById('main');
+mainEl.addEventListener('click', ageVerification); 

@@ -14,22 +14,42 @@
         <h2>Take our highly calibrated personality exam to find your one true drink</h2>
     </Header>
 
-    <main>
+    <main id="main">
         <section id="section 1">
             <h2>Beer Quiz</h2>
-            <button><img id="beer" src="images/pexels-photo-1267257.jpeg" alt="Beer" style="width: 400px; height: 300px;"></button>
-            <section id="form">
+            <button data-toggle="modal" data-target="beerQuiz"><img id="beer" src="images/pexels-photo-1267257.jpeg" alt="Beer" style="width: 400px; height: 300px;"></button>
+            <section id="form"></section>
+            <!--Modal One-->
+            <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="beerQuizLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="beerQuizLabel">Beer Quiz</h5>
+                            <span aria-hidden="true">&times;</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
 
-            </section>
             
         </section>
 
         <section id="section 2"> 
             <h2>Cocktail Quiz</h2>
-            <button><img src="images/pexels-photo-1028637.jpeg" alt="Cocktail" style="width: 400px; height: 300px;"></button>
-            <section id="form">
-
-            </section>
+            <button data-toggle="modal" data-target="cocktailQuiz"><img id="cocktail" src="images/pexels-photo-1028637.jpeg" alt="Cocktail" style="width: 400px; height: 300px;"></button>
+            <section id="form"></section>
+            <!--Modal Two-->
+            <div class="modal fade" id="cocktailQuiz" tabindex="-1" role="dialog" aria-labelledby="cocktailQuizLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="beerQuizLabel">Cocktail Quiz</h5>
+                            <span aria-hidden="true">&times;</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
         <button>In a rush? Push for automatic result</button>
     </main>
