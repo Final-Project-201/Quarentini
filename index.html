@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Perfect Quarantini</title>
+    <link href="1337design.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <Header>
+        <h1>What's Your Quarantini?</h1>
+        <h2>Take our highly calibrated personality exam to find your one true drink</h2>
+    </Header>
+
+    <main>
+
+        <div id="ageVerModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                  <h2>STOP!</h2>
+                </div>
+                
+                <div class="modal-body">
+                  <p> We need to make sure your mom won't sue us! </p>
+                  <p> Tell us more about you...</p>
+                </div>
+                
+                <form id="ageVeriForm">
+                    <label for="age"> Your Age </label>
+                    <input id="age" name="age" type="number">
+                    <input type="submit" value="ENTER">
+                </form>
+
+                <form id="visitorInfoForm">
+                    <label for="firstName"> First Name </label>
+                    <input id="firstName" name="firstName" type="text">
+                    <label for="lastName"> Last Name </label>
+                    <input id="lastName" name="lastName" type="text">
+                    <label for="email"> Email </label>
+                    <input id="email" name="email" type="text">
+                    <input type="submit" value="LET ME IN!">
+                </form>
+
+                <div class="modal-footer">
+                  <h2>STOP!</h2>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="needsAgeVer">
+        <section>
+            <h2>Beer Quiz</h2>
+
+            <div> <img id="beerHeroImg" src="images/pexels-photo-1267257.jpeg" alt="heroImg" style="width: 400px; height: 300px;" > </div>
+        
+        </section>
+
+        <section> 
+            <h2>Cocktail Quiz</h2>
+
+            <div> <img id="liquorHeroImg" src="images/pexels-photo-1028637.jpeg" alt="heroImg" style="width: 400px; height: 300px;"></div>
+            
+        </section>
+        </div>
+        
+    </main>
+
+    <footer>
+        
+    </footer>
+    
+    <script src="age-verification.js" > </script>
+    <script src="userInterface.js" > </script>
+
+</body>
+
+</html>
