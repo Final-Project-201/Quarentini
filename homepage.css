@@ -34,3 +34,37 @@ div>section {
 }
 
 footer {}
+
+#grid   {
+    display: grid;
+    margin-left: 25%;
+    margin-right: 25%;
+    grid-template-columns: 200px 100px 200px;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "main . main"
+        "footer footer footer";
+    column-gap: 20px;
+    justify-items: center;
+}
+
+#item-a {
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+#beerresults    {
+    grid-column: 3/3;
+    grid-row: 1/2;
+}
+
+#buttonResults  {
+    grid-column: 2/3;
+    grid-row: 2/2;
+    justify-content: stretch;
+}
+
+img {
+    height: 100px;
+    width: 100px;
+}
