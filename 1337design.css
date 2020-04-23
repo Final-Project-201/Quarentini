@@ -64,6 +64,10 @@ img {
   animation-duration: 0.4s
 }
 
+#visitorInfoForm {
+  display: none;
+}
+
 /* Add Animation */
 @keyframes animatetop {
   from {top: -300px; opacity: 0}

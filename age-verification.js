@@ -4,21 +4,36 @@
 
 // Get the modal
 var modal = document.getElementById("ageVerModal");
+
 // Get the forms and add an event listeners for each.
 var ageVeriForm = document.getElementById("ageVeriForm");
 
-var visitorInfoForm = document.getElementsByClassName("modal")[0];
+var visitorInfoForm = document.getElementById("visitorInfoForm");
 
 //clik handler for submit button on our age form.
 ageVeriForm.addEventListener('submit', function (event) {
     event.preventDefault();
     var age = event.target.age.value;
     localStorage.setItem ('ageVer', age);
-//     if (age >= 21) {
-//         ageVeriForm.innerHTML = "";
-//         modal.style.display = "block";
-//     }
-// });
+    if (age >= 21) {
+        ageVeriForm.style.display = "none";
+        visitorInfoForm.style.display = "block";
+    }
+});
+
+//clik handler for submit button on our visitor info form.
+visitorInfoForm.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    var age = localStorage.getItem ('ageVer');
+    var firstName = event.target.firstName.value;
+    var lastName = event.target.lastName.value;
+    var email = event.target.email.value;
+
+    localStorage.setItem ('firstName', firstName)
+    localStorage.setItem ('lastName', lastName)
+    localStorage.setItem ('email', email)
+    
     if (age >= 21) {
         if (pictureId === 'beerHeroImg') {
             window.location.href = "beerTest.html";
@@ -27,24 +42,6 @@ ageVeriForm.addEventListener('submit', function (event) {
         }
     }
 });
-
-//clik handler for submit button on our visitor info form.
-// visitorInfoForm.addEventListener('submit', function (event) {
-//     event.preventDefault();
-
-//     var firstName = event.target.firstName;
-//     var lastName = event.target.lastName;
-//     var email = event.target.email;
-
-//     localStorage.setItem ('visitorInfo', firstName, lastName, email);
-//     if (age >= 21) {
-//         if (pictureId === 'beerHeroImg') {
-//             window.location.href = "beerTest.html";
-//         } else {
-//             window.location.href = "liquorTest.html";
-//         }
-//     }
-// });
 
 // Get the trigger that opens the modal.
 var modalTrigger = document.getElementById("needsAgeVer");
