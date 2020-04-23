@@ -11,117 +11,87 @@
 
 <body>
 
-    <Header>
+    <header>
         <h1>What's Your Quarantini?</h1>
 
-    </Header>
+    </header>
 
     <main>
+        <div>
+            <p></p>
+        </div>
 
-        <p>This personality test will match you with your perfect time</p>
-        <div class="wrapper">
+        <h3>Pick your favorite time!</h3>
 
-            <div>
-                <section id="sectionone">
-                    <h2>Beer Quiz</h2>
-                    <a href="beerTest.html"> <img id="heroImg" src="images/pexels-photo-1267257.jpeg" alt="heroImg" style="width: 400px; height: 300px;"> </a>
-                    <section id="form">
-                    </section>
-                    <script src="userInterface.js">
-                    </script>
+        <div id="ageVerModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>STOP!</h2>
+                </div>
+
+                <div class="modal-body">
+                    <p> We need to make sure your mom won't sue us! </p>
+                    <p> Tell us more about you...</p>
+                </div>
+
+                <form id="ageVeriForm">
+                    <label for="age"> Your Age </label>
+                    <input id="age" name="age" type="number">
+                    <input type="submit" value="ENTER">
+                </form>
+
+                <form id="visitorInfoForm">
+                    <label for="firstName"> First Name </label>
+                    <input id="firstName" name="firstName" type="text">
+                    <label for="lastName"> Last Name </label>
+                    <input id="lastName" name="lastName" type="text">
+                    <label for="email"> Email </label>
+                    <input id="email" name="email" type="text">
+                    <input type="submit" value="LET ME IN!">
+                </form>
+
+                <div class="modal-footer">
+                    <h2>STOP!</h2>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="needsAgeVer">
 
 
 
-                    <div id="ageVerModal" class="modal">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h2>STOP!</h2>
-                            </div>
 
-                            <div class="modal-body">
-                                <p> We need to make sure your mom won't sue us! </p>
-                                <p> Tell us more about you...</p>
-                            </div>
+            <div class="wrapper">
+                <div>
+                    <section id="sectionone">
+                        <h2>Beer Quiz</h2>
 
-                            <form id="ageVeriForm">
-                                <label for="age"> Your Age </label>
-                                <input id="age" name="age" type="number">
-                                <input type="submit" value="ENTER">
-                            </form>
 
-                            <form id="visitorInfoForm">
-                                <label for="firstName"> First Name </label>
-                                <input id="firstName" name="firstName" type="text">
-                                <label for="lastName"> Last Name </label>
-                                <input id="lastName" name="lastName" type="text">
-                                <label for="email"> Email </label>
-                                <input id="email" name="email" type="text">
-                                <input type="submit" value="LET ME IN!">
-                            </form>
 
-                            <div class="modal-footer">
-                                <h2>STOP!</h2>
-                            </div>
-                        </div>
 
-                    </div>
+                        <a href="beerTest.html"> <img id="heroImg" src="images/pexels-photo-1267257.jpeg" alt="heroImg" style="width: 400px; height: 300px;"> </a>
+                        <section id="form">
 
-                    <div id="needsAgeVer">
-                        <section>
-                            <h2>Beer Quiz</h2>
-
-                            <div> <img id="beerHeroImg" src="images/pexels-photo-1267257.jpeg" alt="heroImg" style="width: 400px; height: 300px;"> </div>
 
                         </section>
-
-                        <section id="intro">
-                            <h2>Take our highly calibrated personality exam to find your one true drink</h2>
-                        </section>
-                        <div>
-                            <section id="sectionone">
-                                <h2>Beer Quiz</h2>
-
-
-
-
-                                <a href="beerTest.html"> <img id="heroImg" src="images/pexels-photo-1267257.jpeg" alt="heroImg" style="width: 400px; height: 300px;"> </a>
-                                <section id="form">
-
-
-                                </section>
-                        </div>
-                        <div>
-                            <section id="sectiontwo">
-                                <h2>Cocktail Quiz</h2>
-                                <a href="liquorTest.html"> <img id="heroImg" src="images/pexels-photo-1028637.jpeg" alt="heroImg" style="width: 400px; height: 300px;"></a>
-                                <section id="form">
-
-
-                                </section>
-                                <script src="userInterface.js">
-                                </script>
-
-                                <section id="sectiontwo">
-                                    <h2>Cocktail Quiz</h2>
-
-
-
-
-                                    <div> <img id="liquorHeroImg" src="images/pexels-photo-1028637.jpeg" alt="heroImg" style="width: 400px; height: 300px;"></div>
-
-                                </section>
-                        </div>
-
-
-
+                </div>
+                <div>
+                    <section id="sectiontwo">
+                        <h2>Cocktail Quiz</h2>
                         <a href="liquorTest.html"> <img id="heroImg" src="images/pexels-photo-1028637.jpeg" alt="heroImg" style="width: 400px; height: 300px;"></a>
                         <section id="form">
 
 
                         </section>
-                    </div>
+                        <script src="userInterface.js">
+                        </script>
+
+                </div>
             </div>
-            <div style="clear: both;"></div>
+        </div>
+
+        <div style="clear: both;"></div>
 
     </main>
     <footer>
