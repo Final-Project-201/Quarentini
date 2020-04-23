@@ -1,8 +1,30 @@
-
 img {
+
   width: 80px;
   height: 80px;
+
+}
+/* img.beer {
+    border-radius: 75px, 75px, 75px, 75px;
+} */
+
+img:hover {
+  opacity: 0.50;
+}
+
+img {
+  transition: all 1s ease-out;
+}
+
+  padding: 30px;
+
+    width: 80px;
+    height: 80px;
+}
+
 
 img.beer {
     border-radius: 75px, 75px, 75px, 75px;
 }
+
+
