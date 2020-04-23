@@ -1,3 +1,6 @@
+'use-strict'
+
+
 var totalResults = [];
 var biggest = 0;
 
