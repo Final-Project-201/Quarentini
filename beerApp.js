@@ -71,9 +71,16 @@ function removeAnswers() {
     toDelete.innerHTML = '';
 }
 
+function storedInLocalStorage() {
+    var beerArrayString = JSON.stringify(beerResults);
+    localStorage.setItem('finalBeerResult', beerArrayString);
+
+};
+
 function newPage() {
-    window.location = "resultsPage.html"
+    window.location = "resultsPage.html";
 }
+
 
 
 function clickHandler(event) {
@@ -84,11 +91,11 @@ function clickHandler(event) {
             // console.log('target', event.target.id);
             // console.log(' answer ', answersArray[i].beerName);
             if (event.target.id === answersArray[i].beerName) {
-                for (var j = 0; j < totalResults.length; j++)   {
-                    if(answersArray[i].beerName === totalResults[j].name)   {
+                for (var j = 0; j < totalResults.length; j++) {
+                    if (answersArray[i].beerName === totalResults[j].name) {
                         totalResults[j].vote++;
                         beerResults[j] += totalResults[j].vote;
-                        
+
                     }
                 }
 
@@ -98,10 +105,12 @@ function clickHandler(event) {
         removeAnswers();
         render();
     } else {
+        storedInLocalStorage();
         newPage();
+
     }
 }
-console.log(beerResults);
+
 
 
 var question1 = new CreateQuestion('Question 1');
@@ -158,14 +167,14 @@ var answer39 = new CreateAnswers('images/your-moves-are-5b24a2.jpg', 'beerSeven'
 var answer40 = new CreateAnswers('images/your-moves-are-5b24a2.jpg', 'beerEight');
 
 
-var beer1 = new CreateBeerResults('beerOne','images/pexels-photo-1028637.jpeg')
-var beer2 = new CreateBeerResults('beerTwo','images/pexels-photo-1028637.jpeg')
-var beer3 = new CreateBeerResults('beerThree','images/pexels-photo-1028637.jpeg')
-var beer4 = new CreateBeerResults('beerFour','images/pexels-photo-1028637.jpeg')
-var beer5 = new CreateBeerResults('beerFive','images/pexels-photo-1028637.jpeg')
-var beer6 = new CreateBeerResults('beerSix','images/pexels-photo-1028637.jpeg')
-var beer7 = new CreateBeerResults('beerSeven','images/pexels-photo-1028637.jpeg')
-var beer8 = new CreateBeerResults('beerEight','images/pexels-photo-1028637.jpeg')
+var beer1 = new CreateBeerResults('beerOne', 'images/pexels-photo-1028637.jpeg');
+var beer2 = new CreateBeerResults('beerTwo', 'images/pexels-photo-1028637.jpeg');
+var beer3 = new CreateBeerResults('beerThree', 'images/pexels-photo-1028637.jpeg');
+var beer4 = new CreateBeerResults('beerFour', 'images/pexels-photo-1028637.jpeg');
+var beer5 = new CreateBeerResults('beerFive', 'images/pexels-photo-1028637.jpeg');
+var beer6 = new CreateBeerResults('beerSix', 'images/pexels-photo-1028637.jpeg');
+var beer7 = new CreateBeerResults('beerSeven', 'images/pexels-photo-1028637.jpeg');
+var beer8 = new CreateBeerResults('beerEight', 'images/pexels-photo-1028637.jpeg');
 
 
 

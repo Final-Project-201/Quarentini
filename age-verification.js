@@ -2,20 +2,71 @@
 
 // The purpose of this code is simply to verify the user's age. Upon entry to the site the user is forced to answer a prompt before being allowed to continue to our content.
 
-/* Here's what we need: 
-    1. prompt, please enter your age.
-    2. if age > 21, alert the user that they're welcome to the site and move them to our homepage.
-    3. anything less than 21, and the user is alert to come back in a couple years and blocks access to the site.
-    4. eventually, we want to log this into memory to prevent access in the same session by refresh.
-*/
+// Get the modal
+var modal = document.getElementById("ageVerModal");
+// Get the forms and add an event listeners for each.
+var ageVeriForm = document.getElementById("ageVeriForm");
 
-// when clicking on one of the tests prompt the initial age verification prompt
+var visitorInfoForm = document.getElementsByClassName("modal")[0];
 
-// function ageVerification () {
-//     var agePrompt = prompt("How old are you, anyway? Please, enter your age in years.");
-//     if (agePrompt >= 21) alert('Great have a seat, someone will be with you shortly!');
-//         else {
-//             alert('Now enter your mother\'s phone number so we let her know what naughty child she has')
+//clik handler for submit button on our age form.
+ageVeriForm.addEventListener('submit', function (event) {
+    event.preventDefault();
+    var age = event.target.age.value;
+    localStorage.setItem ('ageVer', age);
+//     if (age >= 21) {
+//         ageVeriForm.innerHTML = "";
+//         modal.style.display = "block";
+//     }
+// });
+    if (age >= 21) {
+        if (pictureId === 'beerHeroImg') {
+            window.location.href = "beerTest.html";
+        } else {
+            window.location.href = "liquorTest.html";
+        }
+    }
+});
+
+//clik handler for submit button on our visitor info form.
+// visitorInfoForm.addEventListener('submit', function (event) {
+//     event.preventDefault();
+
+//     var firstName = event.target.firstName;
+//     var lastName = event.target.lastName;
+//     var email = event.target.email;
+
+//     localStorage.setItem ('visitorInfo', firstName, lastName, email);
+//     if (age >= 21) {
+//         if (pictureId === 'beerHeroImg') {
+//             window.location.href = "beerTest.html";
+//         } else {
+//             window.location.href = "liquorTest.html";
 //         }
-// }
-// ageVerification ();
+//     }
+// });
+
+// Get the trigger that opens the modal.
+var modalTrigger = document.getElementById("needsAgeVer");
+
+// Get the <span> element that closes the modal
+// var span = document.getElementsByClassName("close")[0];
+
+var pictureId;
+
+// When the user clicks on the tigger, open the modal
+modalTrigger.addEventListener('click', function(e) {
+    e.preventDefault();
+    pictureId = event.target.id;
+    
+    modal.style.display = "block";
+});
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "block";
+  }
+};
+
+// function modalClickHandler () {}
