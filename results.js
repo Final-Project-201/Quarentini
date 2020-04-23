@@ -10,7 +10,12 @@ function CreateBeerResults(name, image) {
 
 function restoreFromLocal() {
 
-    var finalRestore = JSON.parse(localStorage.getItem('finalBeerResult'));
+    if (JSON.parse(localStorage.getItem('finalLiquorResult'))) {
+        var finalRestore = JSON.parse(localStorage.getItem('finalLiquorResult'));
+    
+}   if (JSON.parse(localStorage.getItem('finalBeerResult'))){
+        var finalRestore = JSON.parse(localStorage.getItem('finalBeerResult'));
+}
     var biggestIndex = 0;
     var biggestValue = 0;
 
