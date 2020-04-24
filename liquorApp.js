@@ -4,7 +4,7 @@ var questionArray = [];
 var questionCounter = 0;
 var answersArray = [];
 var answersCounter = 0;
-var liquorResults = [];
+var results = [];
 var totalResults = [];
 
 function CreateQuestion(ask) {
@@ -12,8 +12,8 @@ function CreateQuestion(ask) {
     questionArray.push(this);
 }
 
-function CreateAnswers(imgsrc, liquorName) {
-    this.liquorName = liquorName;
+function CreateAnswers(imgsrc, name) {
+    this.name = name;
     this.imgsrc = imgsrc;
     this.voteCount = 0;
     answersArray.push(this);
@@ -24,7 +24,7 @@ function CreateLiquorResults(name, image) {
     this.vote = 0;
     this.image = image;
     totalResults.push(this);
-    liquorResults.push(this.vote);
+    results.push(this.vote);
 
 }
 
@@ -40,7 +40,7 @@ function render() {
         var newImg = document.createElement('img');
         var selectedAnswer = selectAnswer();
         newImg.src = selectedAnswer.imgsrc;
-        newImg.id = selectedAnswer.liquorName;
+        newImg.id = selectedAnswer.name;
         newLi.appendChild(newImg);
         targetUl.appendChild(newLi);
         answersCounter++;
@@ -72,8 +72,10 @@ function removeAnswers() {
 }
 
 function storedInLocalStorage() {
-    var liquorArrayString = JSON.stringify(liquorResults);
+    var liquorArrayString = JSON.stringify(results);
     localStorage.setItem('finalLiquorResult', liquorArrayString);
+    var totalLiquorArray = JSON.stringify(totalResults);
+    localStorage.setItem('totalResults', totalLiquorArray)
 
 };
 
@@ -88,13 +90,12 @@ function clickHandler(event) {
         questionCounter++;
 
         for (var i = 0; i < answersArray.length; i++) {
-            // console.log('target', event.target.id);
-            // console.log(' answer ', answersArray[i].liquorName);
-            if (event.target.id === answersArray[i].liquorName) {
+
+            if (event.target.id === answersArray[i].name) {
                 for (var j = 0; j < totalResults.length; j++) {
-                    if (answersArray[i].liquorName === totalResults[j].name) {
+                    if (answersArray[i].name === totalResults[j].name) {
                         totalResults[j].vote++;
-                        liquorResults[j] += totalResults[j].vote;
+                        results[j] += totalResults[j].vote;
 
                     }
                 }
