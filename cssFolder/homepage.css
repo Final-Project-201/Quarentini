@@ -5,18 +5,19 @@ body {
 
 header {
     margin: 0;
-    padding: 0;
+    padding-left: 15%;
     height: 100px;
     width: 100%;
     align-content: center;
     font-size: 72px;
     background: -webkit-linear-gradient(rgb(128, 235, 203), rgb(99, 154, 226));
-    -webkit-text-fill-color: transparent;
+    /* -webkit-text-fill-color: transparent; */
     position: fixed;
 }
 
 h1 {
-    padding: 0;
+    float: left;
+    padding-right: 50px;
     padding-top: 10px;
     margin: 0;
     text-align: center;
@@ -98,3 +99,20 @@ footer>div {
     text-align: center;
 }
 
+button {
+    box-shadow: 3px 4px 0px 0px #1564ad;
+    background:linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
+    background-color:#79bbff;
+    border-radius:5px;
+    border:1px solid #337bc4;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:17px;
+    font-weight:bold;
+    padding:12px 44px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #528ecc;
+       
+}
