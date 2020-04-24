@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Perfect Quarantini</title>
+    <link href="cssFolder/modal.css" rel="stylesheet">
+    <link href="cssFolder/homepage.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <h1 id="homepageheader">What's Your Quarantini?</h1>
+        <nav>
+           <a href="aboutme.html"><button>About Me</button> </a>
+        </nav>
+    </header>
+
+    <main>
+        <div>
+            <p></p>
+        </div>
+
+        <h3>Pick your favorite time!</h3>
+
+        <div id="ageVerModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>STOP!</h2>
+                </div>
+
+                <div class="modal-body">
+                    <p> We don't want a lawsuit from your folks! </p>
+                    <p> Tell us more about you...</p>
+                </div>
+
+                <form id="ageVeriForm">
+                    <label for="age"> Your Age </label>
+                    <input id="age" name="age" type="number">
+                    <input type="submit" value="ENTER">
+                </form>
+
+                <form id="visitorInfoForm">
+                    <label for="firstName"> First Name </label>
+                    <input id="firstName" name="firstName" type="text">
+                    <label for="lastName"> Last Name </label>
+                    <input id="lastName" name="lastName" type="text">
+                    <label for="email"> Email </label>
+                    <input id="email" name="email" type="text">
+                    <input type="submit" value="LET ME IN!">
+                </form>
+
+                <div class="modal-footer">
+                    <h2>STOP!</h2>
+                </div>
+            </div>
+        </div>
+
+        <div id="needsAgeVer">
+            <div class="wrapper">
+                <div>
+                    <section id="sectionone">
+                        <h2>Beer Quiz</h2>
+
+                        <a href="beerTest.html"> <img id="beerHeroImg" src="images/pexels-photo-1267257.jpeg" alt="heroImg" style="width: 400px; height: 300px;"> </a>
+                    </section>
+
+
+
+
+                </div>
+                <div>
+                    <section id="sectiontwo">
+                        <h2>Cocktail Quiz</h2>
+                        <a href="liquorTest.html"> <img id="heroImg" src="images/pexels-photo-1028637.jpeg" alt="heroImg" style="width: 400px; height: 300px;"></a>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+        <div style="clear: both;"></div>
+        
+    </main>
+   
+    <footer>
+        
+        <div> Code Fellows &copy; 2020</div>
+        
+    </footer>
+
+
+
+    <script src="jsFolder/userInterface.js">
+    </script>
+
+
+
+
+    <script src="jsFolder/age-verification.js">
+    </script>
+
+</body>
+
+</html>
