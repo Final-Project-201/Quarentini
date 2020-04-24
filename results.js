@@ -47,7 +47,7 @@ function renderPartTwo() {
     var targetSection = document.getElementById('beerresults');
     var newP = document.createElement('p');
     var newImage = document.createElement('img');
-    if ()
+
     newImage.src = totalResults[biggest].image;
     newP.appendChild(newImage);
     targetSection.appendChild(newP);
@@ -80,4 +80,3 @@ restoreFromLocal();
 
 
 renderPartTwo();
-
