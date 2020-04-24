@@ -1,6 +1,9 @@
 body {
     background-color: lightblue;
     margin: 0;
+    display: flexbox;
+    justify-content: center;
+    align-items: center;
 }
 
 header {
@@ -37,8 +40,6 @@ main {
     padding-left: 20%;
     padding-top: 100px;
     display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 p {
@@ -80,4 +81,5 @@ footer>div {
     background: -webkit-linear-gradient(rgb(160, 114, 15), rgb(148, 26, 77));
     -webkit-background-clip: text;
     text-align: center;
+    overflow: hidden;
 }
