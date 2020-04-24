@@ -4,7 +4,7 @@ var questionArray = [];
 var questionCounter = 0;
 var answersArray = [];
 var answersCounter = 0;
-var beerResults = [];
+var results = [];
 var totalResults = [];
 
 function CreateQuestion(ask) {
@@ -12,8 +12,8 @@ function CreateQuestion(ask) {
     questionArray.push(this);
 }
 
-function CreateAnswers(imgsrc, beerName) {
-    this.beerName = beerName;
+function CreateAnswers(imgsrc, name) {
+    this.name = name;
     this.imgsrc = imgsrc;
     this.voteCount = 0;
     answersArray.push(this);
@@ -24,7 +24,7 @@ function CreateBeerResults(name, image) {
     this.vote = 0;
     this.image = image;
     totalResults.push(this);
-    beerResults.push(this.vote);
+    results.push(this.vote);
 
 }
 
@@ -40,7 +40,7 @@ function render() {
         var newImg = document.createElement('img');
         var selectedAnswer = selectAnswer();
         newImg.src = selectedAnswer.imgsrc;
-        newImg.id = selectedAnswer.beerName;
+        newImg.id = selectedAnswer.name;
         newLi.appendChild(newImg);
         targetUl.appendChild(newLi);
         answersCounter++;
@@ -72,8 +72,10 @@ function removeAnswers() {
 }
 
 function storedInLocalStorage() {
-    var beerArrayString = JSON.stringify(beerResults);
+    var beerArrayString = JSON.stringify(results);
     localStorage.setItem('finalBeerResult', beerArrayString);
+    var totalBeerResults = JSON.stringify(totalResults);
+    localStorage.setItem('totalResults', totalBeerResults);
 
 };
 
@@ -88,13 +90,12 @@ function clickHandler(event) {
         questionCounter++;
 
         for (var i = 0; i < answersArray.length; i++) {
-            // console.log('target', event.target.id);
-            // console.log(' answer ', answersArray[i].beerName);
-            if (event.target.id === answersArray[i].beerName) {
+
+            if (event.target.id === answersArray[i].name) {
                 for (var j = 0; j < totalResults.length; j++) {
-                    if (answersArray[i].beerName === totalResults[j].name) {
+                    if (answersArray[i].name === totalResults[j].name) {
                         totalResults[j].vote++;
-                        beerResults[j] += totalResults[j].vote;
+                        results[j] += totalResults[j].vote;
 
                     }
                 }
@@ -113,68 +114,68 @@ function clickHandler(event) {
 
 
 
-var question1 = new CreateQuestion('Question 1');
-var question2 = new CreateQuestion('Question 2');
-var question3 = new CreateQuestion('Question 3');
-var question4 = new CreateQuestion('Question 4');
-var question5 = new CreateQuestion('Question 5');
-var question6 = new CreateQuestion('Question 6');
-var question7 = new CreateQuestion('Question 7');
-var question8 = new CreateQuestion('Question 8');
-var question9 = new CreateQuestion('Question 9');
-var question10 = new CreateQuestion('Question 10');
+var question1 = new CreateQuestion('Which of these is your ideal vacation spot?');
+var question2 = new CreateQuestion('Select the recreational activity that is your favorite.');
+var question3 = new CreateQuestion('Which of these images describes your ideal Friday night?');
+var question4 = new CreateQuestion('Select the fashion that best describes you.');
+var question5 = new CreateQuestion('Out of the T.V. shows below, which one would you most like to watch?');
+var question6 = new CreateQuestion('Which time period would you most want to travel in time to?');
+var question7 = new CreateQuestion('If someone were to surprise you with food, what kind of food would you hope to get?');
+var question8 = new CreateQuestion('Which career describes you best?');
+var question9 = new CreateQuestion('If you had all the money in the world, which car would you choose below?');
+var question10 = new CreateQuestion('Who\'s Zoo would you rather visit?');
 
 
-var answer1 = new CreateAnswers('images/your-moves-are-5b24a2.jpg', 'beerOne');
-var answer2 = new CreateAnswers('images/pexels-photo-1267257.jpeg', 'beerTwo');
-var answer3 = new CreateAnswers('images/your-moves-are-5b24a2.jpg', 'beerThree');
-var answer4 = new CreateAnswers('images/your-moves-are-5b24a2.jpg', 'beerFour');
-var answer5 = new CreateAnswers('images/your-moves-are-5b24a2.jpg', 'beerFive');
-var answer6 = new CreateAnswers('images/your-moves-are-5b24a2.jpg', 'beerSix');
-var answer7 = new CreateAnswers('images/your-moves-are-5b24a2.jpg', 'beerSeven');
-var answer8 = new CreateAnswers('images/your-moves-are-5b24a2.jpg', 'beerEight');
-var answer9 = new CreateAnswers('images/your-moves-are-5b24a2.jpg', 'beerOne');
-var answer10 = new CreateAnswers('images/your-moves-are-5b24a2.jpg', 'beerTwo');
-var answer11 = new CreateAnswers('images/your-moves-are-5b24a2.jpg', 'beerThree');
-var answer12 = new CreateAnswers('images/your-moves-are-5b24a2.jpg', 'beerFour');
-var answer13 = new CreateAnswers('images/your-moves-are-5b24a2.jpg', 'beerFive');
-var answer14 = new CreateAnswers('images/your-moves-are-5b24a2.jpg', 'beerSix');
-var answer15 = new CreateAnswers('images/your-moves-are-5b24a2.jpg', 'beerSeven');
-var answer16 = new CreateAnswers('images/your-moves-are-5b24a2.jpg', 'beerEight');
-var answer17 = new CreateAnswers('images/your-moves-are-5b24a2.jpg', 'beerOne');
-var answer18 = new CreateAnswers('images/your-moves-are-5b24a2.jpg', 'beerTwo');
-var answer19 = new CreateAnswers('images/your-moves-are-5b24a2.jpg', 'beerThree');
-var answer20 = new CreateAnswers('images/your-moves-are-5b24a2.jpg', 'beerFour');
-var answer21 = new CreateAnswers('images/your-moves-are-5b24a2.jpg', 'beerFive');
-var answer22 = new CreateAnswers('images/your-moves-are-5b24a2.jpg', 'beerSix');
-var answer23 = new CreateAnswers('images/your-moves-are-5b24a2.jpg', 'beerSeven');
-var answer24 = new CreateAnswers('images/your-moves-are-5b24a2.jpg', 'beerEight');
-var answer25 = new CreateAnswers('images/your-moves-are-5b24a2.jpg', 'beerOne');
-var answer26 = new CreateAnswers('images/your-moves-are-5b24a2.jpg', 'beerTwo');
-var answer27 = new CreateAnswers('images/your-moves-are-5b24a2.jpg', 'beerThree');
-var answer28 = new CreateAnswers('images/your-moves-are-5b24a2.jpg', 'beerFour');
-var answer29 = new CreateAnswers('images/your-moves-are-5b24a2.jpg', 'beerFive');
-var answer30 = new CreateAnswers('images/your-moves-are-5b24a2.jpg', 'beerSix');
-var answer31 = new CreateAnswers('images/your-moves-are-5b24a2.jpg', 'beerSeven');
-var answer32 = new CreateAnswers('images/your-moves-are-5b24a2.jpg', 'beerEight');
-var answer33 = new CreateAnswers('images/your-moves-are-5b24a2.jpg', 'beerOne');
-var answer34 = new CreateAnswers('images/your-moves-are-5b24a2.jpg', 'beerTwo');
-var answer35 = new CreateAnswers('images/your-moves-are-5b24a2.jpg', 'beerThree');
-var answer36 = new CreateAnswers('images/your-moves-are-5b24a2.jpg', 'beerFour');
-var answer37 = new CreateAnswers('images/your-moves-are-5b24a2.jpg', 'beerFive');
-var answer38 = new CreateAnswers('images/your-moves-are-5b24a2.jpg', 'beerSix');
-var answer39 = new CreateAnswers('images/your-moves-are-5b24a2.jpg', 'beerSeven');
-var answer40 = new CreateAnswers('images/your-moves-are-5b24a2.jpg', 'beerEight');
+var answer1 = new CreateAnswers('images/answerImages/aspen.jpg', 'Black Butte Porter');
+var answer2 = new CreateAnswers('images/answerImages/newyork.jpg', 'Stella Artois');
+var answer3 = new CreateAnswers('images/answerImages/tahiti.jpg', 'Shocktop');
+var answer4 = new CreateAnswers('images/answerImages/vegas.jpg', 'Fat Tire');
+var answer5 = new CreateAnswers('images/answerImages/basketball.jpg', 'Manny\'s Pale Ale');
+var answer6 = new CreateAnswers('images/answerImages/videogame.jpg', 'Lagunitas IPA');
+var answer7 = new CreateAnswers('images/answerImages/workingout.jpg', 'Stella Artois');
+var answer8 = new CreateAnswers('images/answerImages/socializing.jpg', 'Alaskan Amber');
+var answer9 = new CreateAnswers('images/answerImages/reading.jpg', 'Black Butte Porter');
+var answer10 = new CreateAnswers('images/answerImages/sportsbar.jpg', 'Manny\'s Pale Ale');
+var answer11 = new CreateAnswers('images/answerImages/pub.jpg', 'Bodihizafa');
+var answer12 = new CreateAnswers('images/answerImages/clubbing.jpg', 'Lagunitas IPA');
+var answer13 = new CreateAnswers('images/answerImages/countrygirl.jpg', 'Shocktop');
+var answer14 = new CreateAnswers('images/answerImages/businesscasual.jpg', 'Stella Artois');
+var answer15 = new CreateAnswers('images/answerImages/mountaingirl.jpg', 'Black Butte Porter');
+var answer16 = new CreateAnswers('images/answerImages/hipster-with-beard.jpg', 'Bodihizafa');
+var answer17 = new CreateAnswers('images/answerImages/fottballtv.jpg', 'Alaskan Amber');
+var answer18 = new CreateAnswers('images/answerImages/survivor.jpg', 'Fat Tire');
+var answer19 = new CreateAnswers('images/answerImages/ricknmorty.jpg', 'Shocktop');
+var answer20 = new CreateAnswers('images/answerImages/ozark.jpg', 'Black Butte Porter');
+var answer21 = new CreateAnswers('images/answerImages/roaringtwenties.jpg', 'Stella Artois');
+var answer22 = new CreateAnswers('images/answerImages/fifties.jpg', 'Fat Tire');
+var answer23 = new CreateAnswers('images/answerImages/seventies.jpg', 'Shocktop');
+var answer24 = new CreateAnswers('images/answerImages/eighties.jpg', 'Manny\'s Pale Ale');
+var answer25 = new CreateAnswers('images/answerImages/burger.jpg', 'Alaskan Amber');
+var answer26 = new CreateAnswers('images/answerImages/sushi.jpg', 'Shocktop');
+var answer27 = new CreateAnswers('images/answerImages/tacos.jpg', 'Lagunitas IPA');
+var answer28 = new CreateAnswers('images/answerImages/pasta.jpg', 'Stella Artois');
+var answer29 = new CreateAnswers('images/answerImages/software.jpg', 'Bodihizafa');
+var answer30 = new CreateAnswers('images/answerImages/wallstreet.jpg', 'Fat Tire');
+var answer31 = new CreateAnswers('images/answerImages/teacher.jpg', 'Black Butte Porter');
+var answer32 = new CreateAnswers('images/answerImages/farmer.jpg', 'Manny\'s Pale Ale');
+var answer33 = new CreateAnswers('images/answerImages/bentely.jpg', 'Manny\'s Pale Ale');
+var answer34 = new CreateAnswers('images/answerImages/gwagon.jpg', 'Lagunitas IPA');
+var answer35 = new CreateAnswers('images/answerImages/jaguar.jpg', 'Alaskan Amber');
+var answer36 = new CreateAnswers('images/answerImages/audi.jpeg', 'Bodihizafa');
+var answer37 = new CreateAnswers('images/answerImages/tigerking.png', 'Bodihizafa');
+var answer38 = new CreateAnswers('images/answerImages/baskin.jpg', 'Alaskan Amber');
+var answer39 = new CreateAnswers('images/answerImages/antle.jpg', 'Fat Tire');
+var answer40 = new CreateAnswers('images/answerImages/lowe.jpg', 'Lagunitas IPA');
 
 
-var beer1 = new CreateBeerResults('beerOne', 'images/pexels-photo-1028637.jpeg');
-var beer2 = new CreateBeerResults('beerTwo', 'images/pexels-photo-1028637.jpeg');
-var beer3 = new CreateBeerResults('beerThree', 'images/pexels-photo-1028637.jpeg');
-var beer4 = new CreateBeerResults('beerFour', 'images/pexels-photo-1028637.jpeg');
-var beer5 = new CreateBeerResults('beerFive', 'images/pexels-photo-1028637.jpeg');
-var beer6 = new CreateBeerResults('beerSix', 'images/pexels-photo-1028637.jpeg');
-var beer7 = new CreateBeerResults('beerSeven', 'images/pexels-photo-1028637.jpeg');
-var beer8 = new CreateBeerResults('beerEight', 'images/pexels-photo-1028637.jpeg');
+var beer1 = new CreateBeerResults('Manny\'s Pale Ale', 'images/answerImages/mannys.jpg');
+var beer2 = new CreateBeerResults('Bodihizafa', 'images/answerImages/bodi.png');
+var beer3 = new CreateBeerResults('Shocktop', 'images/answerImages/shocktop.png');
+var beer4 = new CreateBeerResults('Alaskan Amber', 'images/answerImages/alskan.jpg');
+var beer5 = new CreateBeerResults('Fat Tire', 'images/answerImages/fattire.jpg');
+var beer6 = new CreateBeerResults('Stella Artois', 'images/answerImages/stella.jpg');
+var beer7 = new CreateBeerResults('Lagunitas IPA', 'images/answerImages/lagunitas.png');
+var beer8 = new CreateBeerResults('Black Butte Porter', 'images/answerImages/blackbutte.jpg');
 
 
 

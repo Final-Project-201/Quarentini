@@ -12,6 +12,7 @@ header {
     font-size: 72px;
     background: -webkit-linear-gradient(rgb(128, 235, 203), rgb(99, 154, 226));
     -webkit-text-fill-color: transparent;
+    position: fixed;
 }
 
 h1 {
@@ -20,17 +21,80 @@ h1 {
     margin: 0;
     text-align: center;
     font-size: 72px;
-    background: -webkit-linear-gradient(rgb(192, 145, 84), rgb(148, 26, 77));
+    background: -webkit-linear-gradient(rgb(192, 145, 84), rgb(100, 9, 47));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-#intro {
+h3 {
+    padding: 0;
+    border: 1px rgb(73, 5, 62) dotted;
     text-align: center;
+    padding-top: 10px;
+    margin: 0;
+    text-align: center;
+    font-size: 40px;
+    background: -webkit-linear-gradient(rgb(103, 189, 174), rgb(92, 59, 240));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-div>section {
+main {
+    width: 900px;
+    padding: 10px;
+    height: 700px;
+    margin: auto;
+    padding: 10px;
+}
+
+p {
+    height: 70px;
+    text-align: center;
+    font-size: 42px;
+    background: -webkit-linear-gradient(rgb(15, 65, 40), rgb(148, 26, 77));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.wrapper>div {
+    background-color: orange;
+    border: 1px black solid;
+    text-align: center;
     float: left;
 }
 
-footer {}
+.wrapper>div:last-child {
+    background-color: indianred;
+    text-align: center;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 60px 60px;
+    justify-items: center;
+    margin-top: 30px;
+}
+
+
+
+footer {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    height: 90px;
+    background: -webkit-linear-gradient( rgb(99, 154, 226), rgb(128, 235, 203));
+    -webkit-text-fill-color: transparent;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+footer>div {
+    margin-top: 20px;
+    font-size: 40px;
+    background: -webkit-linear-gradient(rgb(160, 114, 15), rgb(148, 26, 77));
+    -webkit-background-clip: text;
+    text-align: center;
+}
+
