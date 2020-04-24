@@ -4,7 +4,7 @@ var questionArray = [];
 var questionCounter = 0;
 var answersArray = [];
 var answersCounter = 0;
-var beerResults = [];
+var results = [];
 var totalResults = [];
 
 function CreateQuestion(ask) {
@@ -12,8 +12,8 @@ function CreateQuestion(ask) {
     questionArray.push(this);
 }
 
-function CreateAnswers(imgsrc, beerName) {
-    this.beerName = beerName;
+function CreateAnswers(imgsrc, name) {
+    this.name = name;
     this.imgsrc = imgsrc;
     this.voteCount = 0;
     answersArray.push(this);
@@ -24,7 +24,7 @@ function CreateBeerResults(name, image) {
     this.vote = 0;
     this.image = image;
     totalResults.push(this);
-    beerResults.push(this.vote);
+    results.push(this.vote);
 
 }
 
@@ -40,7 +40,7 @@ function render() {
         var newImg = document.createElement('img');
         var selectedAnswer = selectAnswer();
         newImg.src = selectedAnswer.imgsrc;
-        newImg.id = selectedAnswer.beerName;
+        newImg.id = selectedAnswer.name;
         newLi.appendChild(newImg);
         targetUl.appendChild(newLi);
         answersCounter++;
@@ -72,8 +72,10 @@ function removeAnswers() {
 }
 
 function storedInLocalStorage() {
-    var beerArrayString = JSON.stringify(beerResults);
+    var beerArrayString = JSON.stringify(results);
     localStorage.setItem('finalBeerResult', beerArrayString);
+    var totalBeerResults = JSON.stringify(totalResults);
+    localStorage.setItem('totalResults', totalBeerResults);
 
 };
 
@@ -88,13 +90,12 @@ function clickHandler(event) {
         questionCounter++;
 
         for (var i = 0; i < answersArray.length; i++) {
-            // console.log('target', event.target.id);
-            // console.log(' answer ', answersArray[i].beerName);
-            if (event.target.id === answersArray[i].beerName) {
+
+            if (event.target.id === answersArray[i].name) {
                 for (var j = 0; j < totalResults.length; j++) {
-                    if (answersArray[i].beerName === totalResults[j].name) {
+                    if (answersArray[i].name === totalResults[j].name) {
                         totalResults[j].vote++;
-                        beerResults[j] += totalResults[j].vote;
+                        results[j] += totalResults[j].vote;
 
                     }
                 }
